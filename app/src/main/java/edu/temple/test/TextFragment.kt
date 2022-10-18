@@ -6,8 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 
 class TextFragment : Fragment() {
+
+    private lateinit var sizeViewModel: SizeViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        sizeViewModel = ViewModelProvider(requireActivity())[SizeViewModel::class.java]
+    }
 
     private lateinit var textView: TextView
 
